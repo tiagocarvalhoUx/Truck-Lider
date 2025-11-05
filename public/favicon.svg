@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fundo verde -->
+  <rect width="100" height="100" fill="#15803d" rx="20"/>
+
+  <!-- Árvore -->
+  <g transform="translate(50, 50)">
+    <!-- Tronco -->
+    <rect x="-8" y="15" width="16" height="20" fill="#78350f" rx="2"/>
+
+    <!-- Copa da árvore (triângulos) -->
+    <path d="M 0,-35 L -25,0 L 25,0 Z" fill="#16a34a"/>
+    <path d="M 0,-25 L -20,5 L 20,5 Z" fill="#22c55e"/>
+    <path d="M 0,-15 L -15,10 L 15,10 Z" fill="#4ade80"/>
+  </g>
+
+  <!-- Texto "AI" (Anderson Inside) -->
+  <text x="50" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">AI</text>
+</svg>

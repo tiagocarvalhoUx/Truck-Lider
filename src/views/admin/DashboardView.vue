@@ -2,26 +2,26 @@
   <div class="min-h-screen bg-gray-100">
     <!-- Navbar -->
     <nav class="bg-gradient-to-r from-green-700 to-green-800 shadow-lg">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex items-center gap-3">
-            <span class="text-3xl">🌲</span>
+      <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
+        <div class="flex justify-between items-center h-14 sm:h-16">
+          <div class="flex items-center gap-2 sm:gap-3">
+            <span class="text-2xl sm:text-3xl">🌲</span>
             <div>
-              <h1 class="text-white font-bold text-xl">ANDERSON INSIDE</h1>
-              <p class="text-green-100 text-xs">Painel Administrativo</p>
+              <h1 class="text-white font-bold text-base sm:text-xl">ANDERSON INSIDE</h1>
+              <p class="text-green-100 text-xs hidden sm:block">Painel Administrativo</p>
             </div>
           </div>
 
-          <div class="flex items-center gap-4">
-            <div class="text-white text-sm">
+          <div class="flex items-center gap-2 sm:gap-4">
+            <div class="text-white text-xs sm:text-sm hidden md:block">
               <p class="font-semibold">{{ user?.email }}</p>
             </div>
             <button
               @click="handleLogout"
-              class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition flex items-center gap-2"
+              class="bg-red-600 hover:bg-red-700 text-white px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg font-semibold transition flex items-center gap-1 sm:gap-2 text-xs sm:text-base"
             >
-              <LogOut :size="18" />
-              Sair
+              <LogOut :size="16" class="sm:w-[18px] sm:h-[18px]" />
+              <span class="hidden sm:inline">Sair</span>
             </button>
           </div>
         </div>
@@ -29,9 +29,9 @@
     </nav>
 
     <!-- Content -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-4 sm:py-6 md:py-8">
       <!-- Stats Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-4 sm:mb-6 md:mb-8">
         <div class="bg-white rounded-lg shadow p-6">
           <div class="flex items-center justify-between">
             <div>

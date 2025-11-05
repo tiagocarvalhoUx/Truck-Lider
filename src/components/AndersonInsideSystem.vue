@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-green-800 via-green-700 to-green-900 p-4">
+  <div class="min-h-screen bg-gradient-to-br from-green-800 via-green-700 to-green-900 p-2 sm:p-4 md:p-6">
     <div class="max-w-2xl mx-auto">
       <AppHeader />
 
@@ -9,7 +9,7 @@
         <CtaBanner />
 
         <!-- Conteúdo -->
-        <div class="p-6">
+        <div class="p-3 sm:p-4 md:p-6">
           <!-- Step 1: Dados do Parceiro -->
           <Step1DadosParceiro
             v-if="step === 1"

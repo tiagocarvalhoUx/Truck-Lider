@@ -2,79 +2,79 @@
   <div>
     <StepHeader :step="3" title="Sua Proposta de Valores" />
 
-    <div class="bg-green-50 p-4 rounded-lg mb-6">
-      <h3 class="font-bold text-center mb-4 flex items-center justify-center gap-2">
-        📊 TABELA DE REFERÊNCIA - ANDERSON INSIDE
+    <div class="bg-green-50 p-3 sm:p-4 rounded-lg mb-4 sm:mb-6 overflow-x-auto">
+      <h3 class="font-bold text-center mb-3 sm:mb-4 flex items-center justify-center gap-2 text-sm sm:text-base">
+        📊 TABELA DE REFERÊNCIA
       </h3>
-      <table class="w-full text-sm">
+      <table class="w-full text-xs sm:text-sm min-w-[300px]">
         <thead class="bg-green-700 text-white">
           <tr>
-            <th class="p-2">Tipo Veículo</th>
-            <th class="p-2">R$/km</th>
-            <th class="p-2">R$/ton</th>
-            <th class="p-2">R$/m³</th>
+            <th class="p-1.5 sm:p-2">Tipo Veículo</th>
+            <th class="p-1.5 sm:p-2">R$/km</th>
+            <th class="p-1.5 sm:p-2">R$/ton</th>
+            <th class="p-1.5 sm:p-2">R$/m³</th>
           </tr>
         </thead>
         <tbody class="bg-white">
           <tr class="border-b">
-            <td class="p-2 font-semibold">Carreta</td>
-            <td class="p-2">R$ 3,10</td>
-            <td class="p-2">R$ 95,00</td>
-            <td class="p-2">R$ 140,00</td>
+            <td class="p-1.5 sm:p-2 font-semibold">Carreta</td>
+            <td class="p-1.5 sm:p-2">R$ 3,10</td>
+            <td class="p-1.5 sm:p-2">R$ 95,00</td>
+            <td class="p-1.5 sm:p-2">R$ 140,00</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-orange-400 p-6 rounded-lg mb-6">
-      <div class="text-center mb-4">
-        <span class="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-orange-400 p-3 sm:p-4 md:p-6 rounded-lg mb-4 sm:mb-6">
+      <div class="text-center mb-3 sm:mb-4">
+        <span class="bg-orange-500 text-white px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-bold">
           💰 PROPOSTA COMERCIAL
         </span>
       </div>
 
-      <h3 class="font-bold text-center mb-4 text-orange-800 flex items-center justify-center gap-2">
-        📋 FAÇA SUA PROPOSTA DE VALORES
+      <h3 class="font-bold text-center mb-3 sm:mb-4 text-orange-800 flex items-center justify-center gap-2 text-sm sm:text-base">
+        📋 FAÇA SUA PROPOSTA
       </h3>
 
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <div>
-          <label class="block text-sm font-semibold mb-2">Valor por TONELADA</label>
+          <label class="block text-xs sm:text-sm font-semibold mb-2">Valor por TONELADA</label>
           <input
             type="number"
             v-model="formData.valorTonelada"
             placeholder="0,00"
-            class="w-full p-3 border-2 border-orange-300 rounded-lg text-center text-lg font-bold"
+            class="w-full p-2.5 sm:p-3 border-2 border-orange-300 rounded-lg text-center text-base sm:text-lg font-bold"
           />
         </div>
 
         <div>
-          <label class="block text-sm font-semibold mb-2">Valor por M³</label>
+          <label class="block text-xs sm:text-sm font-semibold mb-2">Valor por M³</label>
           <input
             type="number"
             v-model="formData.valorM3"
             placeholder="0,00"
-            class="w-full p-3 border-2 border-orange-300 rounded-lg text-center text-lg font-bold"
+            class="w-full p-2.5 sm:p-3 border-2 border-orange-300 rounded-lg text-center text-base sm:text-lg font-bold"
           />
         </div>
 
         <div>
-          <label class="block text-sm font-semibold mb-2">Valor por KM</label>
+          <label class="block text-xs sm:text-sm font-semibold mb-2">Valor por KM</label>
           <input
             type="number"
             v-model="formData.valorKM"
             placeholder="0,00"
-            class="w-full p-3 border-2 border-orange-300 rounded-lg text-center text-lg font-bold"
+            class="w-full p-2.5 sm:p-3 border-2 border-orange-300 rounded-lg text-center text-base sm:text-lg font-bold"
           />
         </div>
 
         <div>
-          <label class="block text-sm font-semibold mb-2">Valor FECHADO</label>
+          <label class="block text-xs sm:text-sm font-semibold mb-2">Valor FECHADO</label>
           <input
             type="number"
             v-model="formData.valorFechado"
             placeholder="0,00"
-            class="w-full p-3 border-2 border-orange-300 rounded-lg text-center text-lg font-bold"
+            class="w-full p-2.5 sm:p-3 border-2 border-orange-300 rounded-lg text-center text-base sm:text-lg font-bold"
           />
         </div>
       </div>

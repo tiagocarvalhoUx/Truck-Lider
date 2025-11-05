@@ -6,30 +6,31 @@
       <h3 class="font-bold text-red-700 flex items-center gap-2 mb-4">
         📍 ROTA PRINCIPAL
       </h3>
-      <div class="flex gap-3 items-center mb-3">
+      <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center mb-3">
         <input
           type="text"
           v-model="formData.origemPrincipal"
           @blur="calcularRotaPrincipal"
           placeholder="Ex: São Paulo, SP"
-          class="flex-1 p-3 border-2 border-green-400 rounded-lg"
+          class="flex-1 p-3 border-2 border-green-400 rounded-lg text-sm sm:text-base"
         />
-        <span class="text-2xl">→</span>
+        <span class="text-2xl text-center sm:text-left">→</span>
         <input
           type="text"
           v-model="formData.destinoPrincipal"
           @blur="calcularRotaPrincipal"
           placeholder="Ex: Rio de Janeiro, RJ"
-          class="flex-1 p-3 border-2 border-green-400 rounded-lg"
+          class="flex-1 p-3 border-2 border-green-400 rounded-lg text-sm sm:text-base"
         />
         <button
           v-if="formData.origemPrincipal && formData.destinoPrincipal"
           @click="calcularRotaPrincipal"
           :disabled="calculando"
-          class="px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+          class="px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 w-full sm:w-auto"
           title="Calcular distância real"
         >
           <RefreshCw :size="18" :class="{ 'animate-spin': calculando }" />
+          <span class="sm:hidden">Calcular Rota</span>
         </button>
       </div>
 
@@ -113,35 +114,35 @@
       </h3>
 
       <div class="space-y-3">
-        <div class="flex gap-3 items-center">
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center">
           <input
             type="text"
             v-model="formData.origem2"
             placeholder="Origem 2 (Opcional)"
-            class="flex-1 p-3 border-2 border-gray-300 rounded-lg"
+            class="flex-1 p-3 border-2 border-gray-300 rounded-lg text-sm sm:text-base"
           />
-          <span class="text-2xl">→</span>
+          <span class="text-2xl text-center sm:text-left">→</span>
           <input
             type="text"
             v-model="formData.destino2"
             placeholder="Destino 2 (Opcional)"
-            class="flex-1 p-3 border-2 border-gray-300 rounded-lg"
+            class="flex-1 p-3 border-2 border-gray-300 rounded-lg text-sm sm:text-base"
           />
         </div>
 
-        <div class="flex gap-3 items-center">
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 items-stretch sm:items-center">
           <input
             type="text"
             v-model="formData.origem3"
             placeholder="Origem 3 (Opcional)"
-            class="flex-1 p-3 border-2 border-gray-300 rounded-lg"
+            class="flex-1 p-3 border-2 border-gray-300 rounded-lg text-sm sm:text-base"
           />
-          <span class="text-2xl">→</span>
+          <span class="text-2xl text-center sm:text-left">→</span>
           <input
             type="text"
             v-model="formData.destino3"
             placeholder="Destino 3 (Opcional)"
-            class="flex-1 p-3 border-2 border-gray-300 rounded-lg"
+            class="flex-1 p-3 border-2 border-gray-300 rounded-lg text-sm sm:text-base"
           />
         </div>
       </div>
