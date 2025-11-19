@@ -4,7 +4,12 @@ import { useAuth } from '@/composables/useAuth'
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'landing',
+    component: () => import('@/views/LandingPageFretes.vue')
+  },
+  {
+    path: '/formulario',
+    name: 'formulario',
     component: () => import('@/views/HomeView.vue')
   },
   {
@@ -22,7 +27,11 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    // Sempre rola para o topo ao navegar
+    return { top: 0, behavior: 'smooth' }
+  }
 })
 
 // Guard de navegação para rotas protegidas

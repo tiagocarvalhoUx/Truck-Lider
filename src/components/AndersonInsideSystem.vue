@@ -1,10 +1,10 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-green-800 via-green-700 to-green-900 p-2 sm:p-4 md:p-6">
+  <div class="anderson-system">
     <div class="max-w-2xl mx-auto">
       <AppHeader />
 
       <!-- Card Principal -->
-      <div class="bg-white rounded-lg shadow-2xl overflow-hidden">
+      <div class="main-card">
         <BadgesSection />
         <CtaBanner />
 
@@ -55,6 +55,7 @@
 
 <script setup>
 import { ref, reactive, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import { calcularDistancia } from '@/utils/calculations'
 import { enviarWhatsApp } from '@/utils/whatsapp'
 import { useProposals } from '@/composables/useProposals'
@@ -71,6 +72,7 @@ import Step3Valores from '@/components/steps/Step3Valores.vue'
 import SuccessScreen from '@/components/SuccessScreen.vue'
 import ProposalsList from '@/components/ProposalsList.vue'
 
+const route = useRoute()
 const step = ref(1)
 const showSuccess = ref(false)
 
@@ -86,6 +88,14 @@ const { proposals, loadProposals, saveProposal } = useProposals()
 
 onMounted(async () => {
   await loadProposals()
+
+  // Preencher dados da landing page se existirem
+  if (route.query.nome) {
+    formData.nome = route.query.nome
+  }
+  if (route.query.whatsapp) {
+    formData.whatsapp = route.query.whatsapp
+  }
 })
 
 const handleContinuarRotas = () => {
@@ -122,3 +132,67 @@ const handleNovaProposta = () => {
   step.value = 1
 }
 </script>
+
+<style scoped>
+.anderson-system {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  padding: 0.5rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.anderson-system::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: radial-gradient(ellipse at top, rgba(201, 169, 97, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.main-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  border-radius: 1rem;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(201, 169, 97, 0.2),
+    0 0 40px rgba(201, 169, 97, 0.1);
+  overflow: hidden;
+  border: 1px solid rgba(201, 169, 97, 0.3);
+  position: relative;
+}
+
+.main-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    #c9a961 20%,
+    #c9a961 80%,
+    transparent 100%
+  );
+}
+
+@media (min-width: 640px) {
+  .anderson-system {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .anderson-system {
+    padding: 1.5rem;
+  }
+
+  .main-card {
+    border-radius: 1.5rem;
+  }
+}
+</style>
